@@ -19,11 +19,11 @@ newProduct.addEventListener('submit', event => {
 const messageForm = document.getElementById('messageForm');
 messageForm.addEventListener('submit', event => {
     event.preventDefault()
-    console.log('Boton enviar presionado')
     let today = new Date();
     let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate() + "  " + today.getHours() + ":" + today.getMinutes()
     let mail = document.getElementById('email').value
     let text = document.getElementById('text').value
+    console.log(`${date}, ${mail}, ${text}`)
     socket.emit('new_message', {
         date: date,
         mail: mail,
